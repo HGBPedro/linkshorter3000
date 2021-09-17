@@ -1,7 +1,3 @@
-/**
- * Required External Modules
- */
-
 import * as dotenv from "dotenv"
 import express from "express"
 import cors from "cors"
@@ -9,22 +5,15 @@ import helmet from "helmet"
 import { exit } from "process"
 import connect from './dbConnection'
 import logger from '../pino-pretty'
+import { appendFile } from "fs"
+import api from './routes/linksRoutes'
 
 dotenv.config()
 
-/**
- * App Variables
- */
-
 if (!process.env.PORT) process.exit(1)
 
-const PORT: number = parseInt(process.env.PORT as string, 10)
-
 const app = express()
-
-/**
- *  App Configuration
- */
+const PORT: number = parseInt(process.env.PORT as string, 10)
 
 app.use(cors())
 app.use(helmet())
@@ -36,9 +25,7 @@ app.use(function(err, req, res, next){
  res.status(422).send({error: err.message});
 });
 
-/**
- * Server Activation
- */
+app.use('/api', api)
 
 app.listen(PORT, () => {
 

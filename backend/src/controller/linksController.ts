@@ -1,19 +1,23 @@
 import link from '../models/linkshorter-schema'
 
-const createLink = exports.create(function (req, res) {
-    
-})
+const test = function (req, res) {
+  res.send("Musica boa aqui: https://open.spotify.com/track/4hBQtVSJt5fZ2VZGECVe3N?si=82a38a24ec634451")
+}
 
-const linkDetails = exports.details(function (req, res) {
+function createLink (req, res) {
+  return true
+}
 
-})
+function linkDetails (req, res) {
+  return true
+}
 
-const updateLink = exports.update(function (req, res) {
+function updateLink (req, res) {
+  return true
+}
 
-})
+function deleteLink (req, res) {
+  return true
+}
 
-const deleteLink = exports.delete(function (req, res) {
-
-})
-
-export { createLink, updateLink, linkDetails, deleteLink }
+export { createLink, updateLink, linkDetails, deleteLink, test }
