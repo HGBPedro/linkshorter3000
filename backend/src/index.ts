@@ -1,11 +1,8 @@
 import * as dotenv from "dotenv"
-import express from "express"
+import express, { NextFunction, Request, Response } from "express"
 import cors from "cors"
 import helmet from "helmet"
-import { exit } from "process"
 import connect from './dbConnection'
-import logger from '../pino-pretty'
-import { appendFile } from "fs"
 import api from './routes/linksRoutes'
 
 dotenv.config()
@@ -19,7 +16,7 @@ app.use(cors())
 app.use(helmet())
 app.use(express.json())
 
-app.use(function(err, req, res, next){
+app.use(function(err: Error, req: Request, res: Response, next: NextFunction){
   console.log(err);
  // ‘res.status(422)’->muda o status
  res.status(422).send({error: err.message});

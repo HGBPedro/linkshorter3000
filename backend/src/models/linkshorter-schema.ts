@@ -1,9 +1,9 @@
-import { ObjectId } from 'bson'
 import mongoose, { Schema } from 'mongoose'
 
 const link = new Schema({
   _id: {
-    type: ObjectId
+    type: mongoose.Types.ObjectId,
+    auto: true
   },
   name: {
     type: String,
@@ -17,4 +17,4 @@ const link = new Schema({
 
 const Link = mongoose.model('links', link)
 
-module.exports = Link
+export default Link

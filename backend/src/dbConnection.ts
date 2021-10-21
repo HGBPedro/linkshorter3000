@@ -10,7 +10,7 @@ function connect() {
       logger.info('Database connect')
     })
     .catch((error) => {
-      logger.error('Database error', error)
+      logger.error(error)
       process.exit(1)
     })
 }
