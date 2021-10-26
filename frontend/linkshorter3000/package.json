@@ -13,8 +13,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
+    "dev": "craco start",
+    "start": "craco build",
     "test": "craco test",
     "eject": "craco eject"
   },
@@ -39,6 +39,6 @@
   "devDependencies": {
     "sass": "^1.43.2",
     "sass-loader": "^12.2.0",
-    "typescript": "^4.3.5"
+    "typescript": "^4.4.4"
   }
 }
