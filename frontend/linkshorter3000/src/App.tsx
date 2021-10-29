@@ -1,3 +1,5 @@
+import indexImage from './Assets/indexImage.png'
+import './App.css'
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,7 +11,19 @@ import Links from 'Views/Links'
 
 function App() {
   return (
-    <></>
+    <Router>
+      <Switch>
+        <Route exact path='/'>
+          <Home />
+        </Route>
+        <Route exact path='/about'>
+          <About />
+        </Route>
+        <Route exact path='/links'>
+          <Links />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
