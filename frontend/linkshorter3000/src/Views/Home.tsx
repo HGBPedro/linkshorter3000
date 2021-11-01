@@ -1,15 +1,18 @@
 import React from 'react'
-import indexImage from './Assets/indexImage.png'
+import indexImage from 'Assets/indexImage.png'
 
-function Home () {
+function Home() {
   return (
     <div className='home'>
-      <h1>Linkshorter 3000</h1>
-      <p>The best link shortener around</p>
-      <div className='home__button-group'>
-        <button>Get started</button>
-        <button>About</button>
-      </div>      
+      <img src={indexImage} alt="home logo" className='home__logo' />
+      <div className='home__container'>
+        <h2 className='header'>Linkshorter 3000</h2>
+        <p>The best link shortener around</p>
+        <div className='home__button-group'>
+          <button className='home__button'>Get started</button>
+          <button className='home__button'>About</button>
+        </div>
+      </div>
     </div>
   )
 }
