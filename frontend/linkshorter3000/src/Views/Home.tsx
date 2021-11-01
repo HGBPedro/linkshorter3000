@@ -9,8 +9,8 @@ function Home() {
         <h2 className='header'>Linkshorter 3000</h2>
         <p>The best link shortener around</p>
         <div className='home__button-group'>
-          <button className='home__button'>Get started</button>
-          <button className='home__button'>About</button>
+          <a href='links' className='home__button'>Get started</a>
+          <a href='about' className='home__button'>About</a>
         </div>
       </div>
     </div>
