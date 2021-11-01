@@ -1,0 +1,29 @@
+.navbar {
+  display: flex;
+  top: 0;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+
+  p {
+    color: $primary-color;
+    font-size: 24px;
+  }
+
+  &__button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 260px;
+  }
+
+  &__button {
+    color: $primary-color;
+    font-size: 24px;
+    text-decoration: none;
+
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
