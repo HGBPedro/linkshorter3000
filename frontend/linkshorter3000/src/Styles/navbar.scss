@@ -3,7 +3,16 @@
   top: 0;
   justify-content: space-between;
   align-items: center;
-  height: 40px;
+  height: 50px;
+  width: 100%;
+
+  &__home {
+    text-decoration: none;
+  }
+
+  .underlined {
+    text-decoration: underline;
+  }
 
   p {
     color: $primary-color;
@@ -11,10 +20,10 @@
   }
 
   &__button-group {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 260px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 20px;
+    list-style: none;
   }
 
   &__button {
@@ -24,6 +33,61 @@
 
     &:focus {
       text-decoration: underline;
+    }
+  }
+
+  &__menu-toggle {
+    display: none;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .navbar {
+      position: relative;
+      
+      &__button-group {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        justify-items: center;
+        align-items: center;
+        text-align: center;
+        width: auto;
+        top: 50px;
+        left: -100%;
+        transition: 0.5s all;
+        list-style: none;
+        padding: 0;
+
+        &--show {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          align-items: center;
+          justify-items: center;
+          text-align: center;
+          width: 100%;
+          top: 50px;
+          left: 0;
+          transition: 0.5s all;
+          list-style: none;
+          padding: 0;
+          background: rgba(35, 28, 61, 0.8);
+        }
+      }
+
+      &__menu-toggle {
+        display: block;
+        width: 24px;
+        height: 24px;
+        text-align: right;
+        margin-right: 10px;
+        background-color: $primary-color;
+        border-radius: 5px;
+      }
+    }
+
+    &__home {
+      text-decoration: none;
     }
   }
 }
