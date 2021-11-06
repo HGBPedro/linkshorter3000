@@ -51,8 +51,8 @@
         justify-items: center;
         align-items: center;
         text-align: center;
-        width: auto;
-        top: 50px;
+        width: 100%;
+        top: 40%;
         left: -100%;
         transition: 0.5s all;
         list-style: none;
@@ -62,17 +62,22 @@
           display: flex;
           flex-direction: column;
           position: absolute;
-          align-items: center;
           justify-items: center;
+          align-items: center;
           text-align: center;
           width: 100%;
-          top: 50px;
+          top: 40%;
           left: 0;
           transition: 0.5s all;
           list-style: none;
           padding: 0;
           background: rgba(35, 28, 61, 0.8);
         }
+      }
+
+      &__button {
+        padding: 0;
+        margin: 0;
       }
 
       &__menu-toggle {
