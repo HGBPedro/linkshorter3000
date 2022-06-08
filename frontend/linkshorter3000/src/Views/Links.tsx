@@ -1,51 +1,42 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Navbar from 'Components/Navbar'
+import { animatedChain, copyIcon, LinksBlob1, LinksBlob2, rightArrow } from 'Assets'
+import { Player } from '@lottiefiles/react-lottie-player';
+
 
 function Links() {
-  const [links, setlinks] = useState(['1'])
-
   return (
     <>
       <Navbar />
       <div className='links-container'>
-        <h3>Link shortener</h3>
-        <form action="" className='links-container__form'>
-          <div>
-            <input type="text" className='links-container__input' />
-            <button className='links-container__button'>Encurtar</button>
-          </div>
-          <div>
-            <input type="text" className='links-container__input' disabled />
-            <div className='links-container__button-group'>
-              <button className='links-container__button'>Copiar</button>
-              <button className='links-container__button'>Compartilhe</button>
-            </div>
-          </div>
-        </form>
-        <aside className="links-contaner__list-div">
-          <ul className="links-contaner__list">
-            {links.map(item => {
-              return (
-                <li>
-                  <div className='links-container__list-item'>
-                    <p>Link N</p>
-                    <p>Link url</p>
-                    <span className='links-container__circle' />
-                  </div>
-                </li>
-              )
-            })}
-          </ul>
-        </aside>
-        <div className="links-container__details">
-          <h3>LInk N</h3>
-          <p>Link url</p>
-          <div>
-            <span>QRCODE</span>
-            <p>link original</p>
-            <p>Criado em: DD/MM/YYYY</p>
+        <div className="links-container__icon-group">
+          <img
+            src={LinksBlob1}
+            className='links-container__icon-background links-container__icon-background--blob1'
+            alt="blob background"
+          />
+          <img
+            src={LinksBlob2}
+            alt="blob background"
+            className='links-container__icon-background links-container__icon-background--blob1'
+          />
+          <div className='links-container__icon'>
+            <Player speed={0.45} autoplay loop src={animatedChain} />
           </div>
         </div>
+        <form action="" className='links-container__text-group'>
+          <span className='links-container__header'>Basta inserir o link no campo abaixo</span>
+          <input type="text" className='links-container__input' />
+          <button className='links-container__button' type='submit'>
+            <img className='links-container__button--svg' src={rightArrow} alt='submit link' />
+          </button>
+          <div className='links-container__link-result'>
+            <span className='links-container__result-text'>
+            lipsum.commmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+            </span>
+            <img src={copyIcon} className='links-container__result-icon' alt="Copiar link" />
+          </div>
+        </form>
       </div>
     </>
   )
