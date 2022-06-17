@@ -1,4 +1,3 @@
-import indexImage from './Assets/indexImage.png'
 import {
   BrowserRouter as Router,
   Switch,
