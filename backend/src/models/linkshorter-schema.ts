@@ -5,10 +5,6 @@ const link = new Schema({
     type: mongoose.Types.ObjectId,
     auto: true
   },
-  name: {
-    type: String,
-    required: true
-  },
   url: {
     type: String,
     required: true

@@ -4,6 +4,7 @@ import cors from "cors"
 import helmet from "helmet"
 import connect from './dbConnection'
 import api from './routes/linksRoutes'
+import logger from "../pino-pretty"
 
 dotenv.config()
 
@@ -25,8 +26,7 @@ app.use(function(err: Error, req: Request, res: Response, next: NextFunction){
 app.use('/api', api)
 
 app.listen(PORT, () => {
-
   connect()
 
-  console.log('Listening on port ', PORT)
+  logger.info(`Listening on port ${PORT}`)
 })
