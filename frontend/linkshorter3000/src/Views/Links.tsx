@@ -1,10 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from 'Components/Navbar'
 import { animatedChain, copyIcon, LinksBlob1, LinksBlob2, rightArrow } from 'Assets'
-import { Player } from '@lottiefiles/react-lottie-player';
-
+import { Player } from '@lottiefiles/react-lottie-player'
+import axios, { AxiosResponse } from 'axios'
 
 function Links() {
+  const [responseId, setResponseId] = useState('')
+  const [url, setUrl] = useState('')
+  const redirectLink = process.env.REACT_APP_SHORTENER_LINK + '/api/redirect/' + responseId
+
+  function postLink (values: React.SyntheticEvent) {
+    values.preventDefault()
+
+    axios.post('/api/create', { url }, {
+      baseURL: process.env.REACT_APP_SHORTENER_LINK,
+      headers: { Response: 'application/json'}
+    }).then((response: AxiosResponse) => {
+      setResponseId(response.data?._id)
+    }).catch()
+  }
+
   return (
     <>
       <Navbar />
@@ -24,17 +39,22 @@ function Links() {
             <Player speed={0.45} autoplay loop src={animatedChain} />
           </div>
         </div>
-        <form action="" className='links-container__text-group'>
+        <form onSubmit={postLink} className='links-container__text-group'>
           <span className='links-container__header'>Basta inserir o link no campo abaixo</span>
-          <input type="text" className='links-container__input' />
+          <input name='url' type="text" className='links-container__input' onChange={event => setUrl(event.target.value)}/>
           <button className='links-container__button' type='submit'>
             <img className='links-container__button--svg' src={rightArrow} alt='submit link' />
           </button>
           <div className='links-container__link-result'>
             <span className='links-container__result-text'>
-            lipsum.commmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+              {responseId && redirectLink}
             </span>
-            <img src={copyIcon} className='links-container__result-icon' alt="Copiar link" />
+            <img
+              className='links-container__result-icon'
+              alt="Copiar link"
+              src={copyIcon}
+              onClick={() => navigator.clipboard && navigator.clipboard.writeText(redirectLink)}
+            />
           </div>
         </form>
       </div>

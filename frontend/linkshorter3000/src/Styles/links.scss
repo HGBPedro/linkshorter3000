@@ -30,7 +30,7 @@
     width: 100%;
     height: 70px;
     padding: 0 1rem;
-    font-size: 40px;
+    font-size: 28px;
     color: $primary-color;
     max-width: 51.48rem;
   }
@@ -77,7 +77,7 @@
     min-width: 36rem;
     border: 0;
     padding: 0 1rem;
-    font-size: 40px;
+    font-size: 28px;
     box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
 
     &:focus {
@@ -87,7 +87,6 @@
 
   &__result-text {
     white-space: nowrap;
-    max-width: 24ch;
     overflow: hidden;
     text-overflow: ellipsis;
   }
