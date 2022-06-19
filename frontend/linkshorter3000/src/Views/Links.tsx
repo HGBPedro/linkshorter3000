@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Navbar from 'Components/Navbar'
 import { animatedChain, copyIcon, LinksBlob1, LinksBlob2, rightArrow } from 'Assets'
 import { Player } from '@lottiefiles/react-lottie-player'
