@@ -9,6 +9,7 @@
     display: flex;
     max-width: 600px;
     max-height: 530px;
+    left: 4rem;
 
     @media screen and (max-width: 768px) {
       max-width: 485px;
@@ -154,15 +155,6 @@
     &--blob2 {
       z-index: 2;
       animation: spin 45s infinite linear;
-    }
-  }
-
-  @keyframes rotation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(359deg);
     }
   }
 }
