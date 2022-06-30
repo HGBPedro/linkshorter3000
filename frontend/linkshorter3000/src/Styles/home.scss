@@ -1,7 +1,10 @@
 .home {
   position: relative;
+  margin: 0 auto;
 
   &__container {
+    position: relative;
+    z-index: 4;
     padding: 30vh 0;
     text-align: center;
     margin: 0 auto;
@@ -21,50 +24,9 @@
     }
   }
 
-  &__logo {
-    position: absolute;
-    z-index: -1;
-    top: 10rem;
-    left: 30rem;
-    width: 50rem;
-    height: 50rem;
-    
-    @media (max-width: 768px) {
-      z-index: -1;
-      position: absolute;
-      top: 10vh;
-      left: -10rem;
-      width: 30rem;
-      height: 30rem;
-    }
-    
-    @media (min-width: 769px) and (max-width: 1280px) {
-      z-index: -1;
-      position: absolute;
-      left: -8rem;
-      width:30rem;
-      height: 30rem;
-    }
-
-    @media (min-width: 1281px) and (max-width: 1800px) {
-      position: absolute;
-      width: 31rem;
-      height: 31rem;
-      left: 8rem;
-      top: 3rem;
-      z-index: -1;
-    }
-  }
-
   .header {
-    color: $primary-color;
     font-size: 64px;
-    font-weight: normal;
-  }
-  
-  p{
-    color: $primary-color;
-    font-size: 30px;
+    font-weight: 500;
   }
 
   &__button-group {
@@ -82,13 +44,24 @@
     line-height: 2.5;
     width: 13.43rem;
     border-radius: 12px;
-    background-color: $primary-color;
-    border: solid 1px $primary-color;
-    color: $background;
+    background-color: $secondary-color;
+    border: solid 1px $secondary-color;
+    color: $primary-color;
     font-size: 1.5rem;
     font-weight: bold;
     padding: 0 1.2rem;
     text-decoration: none;
+    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
+
+    &:hover {
+      opacity: 60%;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    &:not(:hover) {
+      transition: 0.25s;
+    }
 
     @media (max-width: 768px) {
       width: 100%;
